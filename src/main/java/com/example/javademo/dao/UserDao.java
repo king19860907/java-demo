@@ -2,6 +2,7 @@ package com.example.javademo.dao;
 
 import com.example.javademo.model.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 @Mapper
 public interface UserDao {
 
-    List<User> queryUsers(String userName);
+    List<User> queryUsers(@Param("userName") String userName);
 
     void addUser(User user);
 
