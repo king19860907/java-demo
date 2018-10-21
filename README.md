@@ -5,6 +5,7 @@ SpringBoot + StringMVC + Spring + MyBatis
 
 ## 下载地址
 [jdk1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+
 [IDEA](https://www.jetbrains.com/idea/download/#section=windows)
 
 ## 配置
