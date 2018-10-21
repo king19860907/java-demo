@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.javademo.dao.UserDao">
+
+    <insert id="addUser">
+        insert into user (user_name,user_code) values (#{userName},#{userCode})
+    </insert>
+    <update id="updateUser">
+        update user
+        <set>
+            <if test="userName != null">
+                user_name = #{userName},
+            </if>
+            <if test="userCode != null">
+                user_code = #{userCode},
+            </if>
+        </set>
+        where user_id = #{userId}
+    </update>
+    <delete id="deleteById">
+        delete  from user where user_id = #{userId}
+    </delete>
+
+    <select id="queryUsers" resultType="com.example.javademo.model.User">
+      select * from user
+      where 1=1
+      <if test="userName != null" >
+        user_name = #{userName}
+      </if>
+    </select>
+    <select id="getById" resultType="com.example.javademo.model.User">
+        select * from user where user_id = #{userId}
+    </select>
+
+</mapper>
