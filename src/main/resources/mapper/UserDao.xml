@@ -3,9 +3,9 @@
 <mapper namespace="com.example.javademo.dao.UserDao">
 
     <insert id="addUser">
-        insert into user (user_name,user_code) values (#{userName},#{userCode})
+        insert into user (user_name,user_code) values (#{user.userName},#{user.userCode})
     </insert>
-    <update id="updateUser">
+    <update id="update">
         update user
         <set>
             <if test="userName != null">
@@ -18,15 +18,15 @@
         where user_id = #{userId}
     </update>
     <delete id="deleteById">
-        delete  from user where user_id = #{userId}
+        delete from user where user_id = #{userId}
     </delete>
 
     <select id="queryUsers" resultType="com.example.javademo.model.User">
-      select * from user
-      where 1=1
-      <if test="userName != null" >
-        and user_name = #{userName}
-      </if>
+        select * from user
+        where 1=1
+        <if test="userName != null">
+            and  user_name = #{userName}
+        </if>
     </select>
     <select id="getById" resultType="com.example.javademo.model.User">
         select * from user where user_id = #{userId}

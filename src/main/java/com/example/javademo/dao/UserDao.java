@@ -7,18 +7,18 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 @Mapper
+@Repository
 public interface UserDao {
 
     List<User> queryUsers(@Param("userName") String userName);
 
-    void addUser(User user);
+    void addUser(@Param("user") User user);
 
-    User getById(Integer userId);
+    User getById(@Param("userId") Integer userId);
 
-    void deleteById(Integer userId);
+    void deleteById(@Param("userId") Integer userId);
 
-    void updateUser(User user);
+    void update(User user);
 
 }

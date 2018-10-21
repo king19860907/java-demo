@@ -38,7 +38,7 @@ public class UserController {
 
     @RequestMapping(value = "",method = RequestMethod.PATCH)
     public String update(@RequestBody User user){
-        userService.updateUser(user);
+        userService.update(user);
         return "succcess";
     }
 
