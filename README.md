@@ -26,7 +26,7 @@ SpringBoot + StringMVC + Spring + MyBatis
 ```
 
 * 阿里巴巴镜像
-```
+```xml
 <repositories>
         <repository>
             <id>public</id>
